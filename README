@@ -1,0 +1,92 @@
+﻿This is the README file for the Rabindra program.
+
+Copyright (C) 2012 Sucharit Sarkar.
+Contact: sucharit@math.columbia.edu
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+
+**********************************
+Here is a step by step guideline on install Rabindra, the phonetic
+input method for Bengali and Sanskrit.
+
+-Open a terminal, go to the directory where you have downloaded all
+the files of Rabindra. Henceforth, we are assuming that you are using
+Bash on Ubuntu (any other shell on any other free operating system
+will be similar).
+
+-Install ibus-m17n.
+sudo apt-get install ibus-m17n
+ 
+-Keep the mim files in the correct location.
+sudo cp bn-rabindra.mim /usr/share/m17n/
+sudo cp sa-sanskrit.mim /usr/share/m17n/
+
+-Keep the icon file in the correct location.
+sudo cp bn-rabindra.png /usr/share/m17n/icons/
+sudo cp bn-rabindra.png /usr/share/m17n/icons/sa-sanskrit.png
+
+-Ditto for the font.
+mkdir -p ~/.fonts
+cp Rabindra.ttf ~/.fonts/
+
+-Start ibus-daemon; add Bengali-rabindra and Sanskrit-sanskrit as
+input methods. You might want to configure shortcuts, and add the
+command ibus-daemon to the startup applications list.
+
+**********************************
+Here is a brief introduction to the phonetic input method for
+Bengali. The phonetic input method for Sanskrit is similar.
+
+-Start the phonetic input method through ibus-daemon. You may use this
+for any text entry field (e.g. browser, text editor).
+
+-If the letters do not display properly, you may choose the font
+Rabindra. It contains Lohit Bengali fonts and modified Lohit Hindi
+fonts (the few letters where the Sanskrit script differs from the
+Hindi script are modified).
+
+-Start typing. The keymapping is fairly natural (with some additional
+shortcuts). The following are some of the features.
+
+--অ is represented by a, not o. Therefore, আ is represented by aa or
+A, and ও is represented by o.
+--For the longer sounds, type twice, i.e., aa for আ, ii for ঈ, uu for
+ঊ, and so on.
+--ঋ is represented by wri.
+--For the harder/longer sounds, type in capitals, e.g. T for ট, Th for
+ঠ, D for ড, N for ণ, R for ড়, J for য.
+--ঙ is Ng, ঞ is Nj.
+--শ, স¸ and ষ are sh, s and S, respectively.
+--For hasanta, use `.
+--For juktakkhors, type the consecutive consonants. For example, ndr
+for ন্দ্র, kt for ক্ত, shr for শ্র.  Therefore, ব-ফলা is w, র-ফলা is r,
+য-ফলা is y.
+--Some juktakkhors have shortcuts, like gy for জ্ঞ (for গ্য use gY), nj
+for ঞ্জ, x for ক্ষ (the usual method to enter ক্ষ would have kS). I will
+leave the rest to you to discover for yourself.
+--ঃ is represented by H; for ঁ, use ^.
+--It is often useful to disrupt the phonetic transliteration; use
+$. For example, to type করতে, type kar$te; if you type karte, you get
+কর্তে; you may also type karate to get করতে, although that is a bit
+unnatural.  (Additional note: Since I use LaTeX a lot, which uses the
+symbol $ a lot, I have reconfigured my Caps Lock to mean $. Therefore,
+typing $ is really easy for me. (Use xmodmap to reconfigure Caps
+Lock.))
+
+-Some examples.
+
+--বাংলা bAnglA or baanglaa
+--রবীন্দ্র rabIndra
+--তৎক্ষণাৎ tat`xaNAt`
+--নমোঽস্তুতে namOOstute
+--হ্যাঁ hyA^
+--তত্ত্বালোচনা tattwAlochanA
+--জিজ্ঞাসা jigyAsA
+--ভাগ্য bhAgYa
+--পরেদ্যবি paredyabi
+--মাতৃমন্দির mAtwrimandir
+--সন্ধ্যার্ঘ্য sandhyArghya
+--কলকাতা kal$kAtA
